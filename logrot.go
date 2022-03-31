@@ -37,8 +37,7 @@ func NewLogger(name string, file bool, console bool, path string) (logger *Logge
 	}
 	// Logger
 	name = fmt.Sprintf("[%v] ", name)
-	logger = &Logger{Logger: log.New(writer, name, log.LstdFlags)}
-	logger.SetFlags(log.Lshortfile)
+	logger = &Logger{Logger: log.New(writer, name, log.LstdFlags|log.Lshortfile)}
 
 	return logger
 }
